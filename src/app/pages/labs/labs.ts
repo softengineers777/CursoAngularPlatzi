@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { signal} from '@angular/core';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class Labs {
     'Crear Componentes',
     'Crear Servicio'    
   ];
-  name = 'James';
+  name = signal('James');
   edad = 18;
   disabled = true;
   img = 'https://w3schools.com/howto/img_avatar.png';
@@ -32,6 +33,14 @@ export class Labs {
     alert('Hola')
   }
   changeHadler (event:Event){
+    const input = event.target as HTMLInputElement;
+    const newValue = input.value;
+    this.name.set(newValue);
       console.log(event);
+  }
+  keydownHandler(event : KeyboardEvent)
+  {
+    const input = event.target as HTMLInputElement;
+    console.log(input.value);
   }
 }

@@ -7,7 +7,7 @@
     <hr />
     <h2>{{'Hola'.repeat(4)}}</h2>
     <p> La suma de 3 + 3 es {{3+3}}</p>
-    <p>Hola soy {{name}}</p>
+    <p>Hola soy {{(name())}}</p>
     <p>Mi edad es: {{edad}}</p>
     <hr />
     <img [src]="persona.avatar" alt="">
@@ -22,6 +22,15 @@
     <hr />
     <p>(change)</p>
     <input type="number" [value]="persona.edad" (change)="changeHadler($event)">
+    <p>(keydown)</p>
+    <input type="number" [value]="persona.name" (keydown)="keydownHandler($event)">
+    <p>signals</p>
+    <hr/>
+    <input type="number" [value]="name()" (keydown)="keydownHandler($event)">
+
+
+
+    
 
 
 
