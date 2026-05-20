@@ -13,12 +13,19 @@ import { signal} from '@angular/core';
 export class Labs {
     
   Welcome = 'Este  es  un Mensaje Dinamico';
-  listatareas = [
+  // listatareas = [
+  //   'Instalar al Angular Cli',
+  //   'Crear un proyecto',
+  //   'Crear Componentes',
+  //   'Crear Servicio'    
+  // ];
+  // aqui hemos  vuelto el arrays  de  elementos una señal
+   listatareas =signal ([
     'Instalar al Angular Cli',
     'Crear un proyecto',
     'Crear Componentes',
     'Crear Servicio'    
-  ];
+  ]);
   name = signal('James');
   edad = 18;
   disabled = true;
